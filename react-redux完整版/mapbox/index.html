@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <title>mapbox</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body> 
+    <div id="map"></div>
+    <script>
+        // import mapboxgl from 'mapbox-gl';
+        import MapboxLanguage from '@mapbox/mapbox-gl-language';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoibml1eSIsImEiOiJjbGNpZXJoYXUwcmh0M3ZwbnhrcjhobzNxIn0.-7WCmLUa_6RD9mOMZ1AFkQ';
+        const map = new mapboxgl.Map({
+        container: 'map', // 需要地图元素的ID
+        style: 'mapbox://styles/mapbox/streets-v11', // mapbox官方的底图和样式文件
+        preserveDrawingBuffer: true, //允许地图导出为图片
+        ceter:[-74.5,40], // 初始化中心点位置
+        zoom:10, // 初始化缩放级别
+        pitch: 40,
+        bearing: 20,
+        antialias: true
+        });
+        let language = new MapboxLanguage({ defaultLanguage: "zh-Hans" });
+        map.addControl(language);
+    </script>
+</body>
+
+</html>

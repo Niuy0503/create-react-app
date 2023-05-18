@@ -1,0 +1,18 @@
+.tablist {
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+}
+.tab-item {
+    flex: 1;
+    text-align: center;
+}
+.tab-item span {
+    padding: 5px 8px;
+}
+.tab-item.active {
+    color: red;
+}
+.tab-item.active span {
+    border-bottom: 2px solid red;
+}
